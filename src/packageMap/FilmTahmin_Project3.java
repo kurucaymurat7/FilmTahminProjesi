@@ -76,7 +76,7 @@ public class FilmTahmin_Project3 {
                     if (tahminedilenharflerList.contains(tahminedilenharf)) {
                         System.out.println("Bu harf zaten tahmin edildi.");
                         sayac--;
-                    } else if (!(tahminedilenharflerList.contains(tahminedilenharf))) {
+                    } else {
                         tahminedilenharflerList.add(tahminedilenharf);
                         if (tahminedilecekfilm.contains(tahminedilenharf)) {
                             for (int i = 0; i < tahminedilecekfilmArray.length; i++) {
