@@ -1,12 +1,12 @@
 package packageMap;
 
-import jdk.swing.interop.SwingInterOpUtils;
-
 import java.util.*;
 
 public class FilmTahmin_Project2 {
 
     static Map<Integer, String> filmMap = new HashMap<>();
+    static Scanner scan = new Scanner(System.in);
+
     /*
  TASK :
   yukarıdaki film listinde bulunan filmlerden herhangi birisini kullanıcının filim ismini  görmeden
@@ -24,7 +24,7 @@ public class FilmTahmin_Project2 {
 
     public static void main(String[] args) {
 
-        Scanner scan = new Scanner(System.in);
+
         System.out.println("~~~FILM TAHMIN OYUNUNA HOSGELDINIZ~~~");
         int secimIndex = -1;
         String film = "";
@@ -45,7 +45,7 @@ public class FilmTahmin_Project2 {
             System.out.print("1-" + filmMap.size() + " arasinda bir sayi giriniz \n\nSecim : ");
             try {
                 secimIndex = scan.nextInt();
-                if (secimIndex < 1 || secimIndex > filmMap.size()) {
+                if (secimIndex < 0 || secimIndex > filmMap.size()) {
                     throw new ArithmeticException();
                 }
             } catch (ArithmeticException e) {
@@ -59,7 +59,7 @@ public class FilmTahmin_Project2 {
                 film = filmMap.get(secimIndex);
                 System.out.println("Seçtiğiniz film " + film.length() + " harften oluşmaktadır.");
                 System.out.println(film.replaceAll("\\w", "(-)"));
-                kalanhak = film.length();
+                kalanhak = film.length()*2;
                 String[] kriptedFilm = new String[film.length()];
                 List<String> tahminHarfler = new ArrayList<>();
 
@@ -101,12 +101,13 @@ public class FilmTahmin_Project2 {
                     tahmin = scan.next();
                     if (tahmin.equalsIgnoreCase(film)) {
                         System.out.println(" Tebrikler. Bildiniz. ");
+                        System.out.println();
                         break;
                     } else {
                         kalanhak -= 1;
                         if (kalanhak == 0) {
                             System.out.println(" Maalesef hakkınız kalmadı .");
-                            System.out.println(" Film : " + film);
+                            System.out.println(" Tahmni etmeniz gereken film : " + film);
                             break;
                         }
                     }
