@@ -1,11 +1,8 @@
 package packageMap;
 
-import jdk.swing.interop.SwingInterOpUtils;
-
-import javax.lang.model.type.ArrayType;
 import java.util.*;
 
-public class project01 {
+public class FilmTahmin_Project3 {
 
       /*
  TASK :

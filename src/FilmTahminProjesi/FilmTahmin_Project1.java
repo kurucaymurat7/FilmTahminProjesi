@@ -2,7 +2,7 @@ package FilmTahminProjesi;
 
 import java.util.*;
 
-public class FilmTahmin_Project2 {
+public class FilmTahmin_Project1 {
 
     static List<String> filmList = new ArrayList<>(Arrays.asList("JOKER", "INCEPTION", "PIYANIST", "GREENMILE", "LEON", "GODFATHER", "JURASSICPARK", "TITANIC"));
 /*
